@@ -25,7 +25,6 @@ const database = knex({
 
 // Initialize express server
 const app = express()
-const port = 8080
 app.use(express.json())
 app.use(cors())
 
@@ -48,7 +47,7 @@ app.get('/profile/:id', (req, res) => {profile.handleProfile(req, res, database)
 
 
 // Express server port 
-app.listen(port, () =>{
-    console.log(`Server is running on port ${port}`)
+app.listen(process.env.PORT || 3000, () =>{
+    console.log(`Server is running on port ${process.env.PORT}`)
 })
 
