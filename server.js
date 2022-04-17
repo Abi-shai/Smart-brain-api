@@ -29,6 +29,8 @@ app.use(express.json())
 app.use(cors())
 
 
+app.post('/', (req, res) => {res.json(`Hey it's working`)})
+
 // Route config for the signin entrie point
 app.post('/signin', (req, res) => {signIn.handleSignIn(req, res, database, bcrypt)})
 
